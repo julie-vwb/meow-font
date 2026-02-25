@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meowfont - Premium Handwriting Font</title>
+    <title>Meowfont - Premium Font & Deco</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,256 +15,256 @@
         }
 
         :root {
-            --primary-orange: #FFB347;
-            --bright-red: #FF6B6B;
-            --sunny-yellow: #FFD93D;
-            --soft-bg: #FFFDF9;
-            --text-dark: #5D4A40;
-            --text-light: #8E7C73;
+            --primary: #FF8C3A;
+            --secondary: #FF4D4D;
+            --bg-body: #FFF9F5;
+            --card-bg: #FFFFFF;
+            /* ปรับสีตัวหนังสือให้เข้มขึ้นเพื่อความชัดเจน */
+            --text-main: #332211; 
+            --text-sub: #554433;
         }
 
         body {
             font-family: 'Mali', cursive;
-            background-color: var(--soft-bg);
-            color: var(--text-dark);
+            background-color: var(--bg-body);
+            color: var(--text-main);
             line-height: 1.6;
-            font-weight: 200; /* ตั้งค่าหน้าบางระดับโปร */
-            -webkit-font-smoothing: antialiased;
+            font-weight: 400; /* น้ำหนักปกติ อ่านง่ายที่สุด */
         }
 
         .container {
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 40px 15px;
         }
 
-        /* Hero */
-        .hero {
+        header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        .hero h1 {
-            color: var(--bright-red);
-            font-size: 56px;
-            font-weight: 400;
+        h1 {
+            color: var(--secondary);
+            font-size: 52px;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
-        .hero .subtitle {
-            color: var(--primary-orange);
-            font-size: 16px;
+        .subtitle {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 500;
         }
 
-        /* Notification */
-        .notification-box {
-            background: #fff;
-            border: 1px dashed var(--primary-orange);
+        /* กรอบข้อความประกาศ - ปรับให้อ่านชัดขึ้น */
+        .announcement {
+            background: var(--card-bg);
+            border: 2px dashed var(--primary);
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(255, 140, 58, 0.1);
         }
 
-        /* Card Style */
+        .announcement h3 {
+            color: var(--secondary);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* การ์ดสินค้าและข้อมูล - พื้นหลังขาวตัดกับตัวหนังสือเข้ม */
         .card {
-            background: #fff;
+            background: var(--card-bg);
             border-radius: 25px;
             padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .card-title {
-            color: var(--bright-red);
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 24px;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-bottom: 1px solid #FFE6D5;
+            padding-bottom: 10px;
         }
 
-        /* Product List */
         .product-item {
-            background: #FFFBF5;
+            background: #FFFBF7;
             padding: 20px;
-            border-radius: 18px;
-            margin-bottom: 15px;
-            border: 1px solid #FFE6CC;
+            border-radius: 15px;
+            border: 1px solid #FFDAB9;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 15px;
         }
 
-        .product-info h4 { font-weight: 400; color: var(--text-dark); }
-        .product-info p { font-size: 13px; color: var(--text-light); }
+        .product-item h4 {
+            font-weight: 600;
+            font-size: 19px;
+            color: var(--text-main);
+        }
 
-        /* Step List */
+        .product-item p {
+            font-size: 15px;
+            color: var(--text-sub);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        /* ขั้นตอนการสั่งซื้อ */
         .step-item {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 15px;
-            align-items: flex-start;
-            padding: 15px;
-            background: #FFFBF5;
+            padding: 18px;
+            background: #FFFBF7;
             border-radius: 15px;
+            align-items: center;
+            border: 1px solid #FFE4B5;
         }
 
-        .step-num {
-            background: var(--primary-orange);
-            color: white;
-            width: 30px;
-            height: 30px;
+        .num {
+            background: var(--secondary);
+            color: #fff;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
             flex-shrink: 0;
-            font-size: 14px;
         }
 
-        /* Payment & Info */
-        .grid {
+        .step-item p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .payment-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 25px;
         }
 
-        .grid-item {
-            background: #FFF9F0;
-            padding: 15px;
-            border-radius: 15px;
+        .pay-box {
             text-align: center;
-            border: 1px solid var(--sunny-yellow);
+            padding: 20px;
+            background: #FFF5EE;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 17px;
         }
 
-        /* Buttons */
-        .btn {
+        /* ลิงก์ติดต่อ */
+        .contact-group {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-link {
             display: inline-block;
-            background: linear-gradient(90deg, #FFB347, #FF6B6B);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
+            margin: 10px;
+            padding: 15px 30px;
+            border: 2px solid var(--primary);
+            border-radius: 35px;
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 300;
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 600;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
-            font-family: 'Mali', cursive;
+            background: #fff;
         }
 
-        .contact-btn {
-            background: white;
-            color: var(--text-dark);
-            border: 1px solid var(--primary-orange);
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 14px;
-            margin: 5px;
-            display: inline-block;
+        .contact-link:hover {
+            background: var(--primary);
+            color: #fff;
         }
 
         footer {
             text-align: center;
-            padding-bottom: 50px;
-            font-size: 12px;
-            color: var(--text-light);
-        }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            .product-item { flex-direction: column; text-align: center; gap: 15px; }
+            padding: 60px;
+            font-size: 14px;
+            color: var(--text-sub);
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="hero">
+        <header>
             <h1>MEOWFONT</h1>
             <div class="subtitle">
-                <p>✨ ยินดีต้อนรับเข้าสู่ร้าน Meowfont นะคะ ✨</p>
-                <p>รวมฟอนต์ลายมือ ของตกแต่ง และสติกเกอร์สดใสแน่นๆ</p>
+                <p>✨ ยินดีต้อนรับเข้าสู่ร้าน Meowfont ✨</p>
+                <p>จำหน่ายฟอนต์ลายมือ และของตกแต่งสดใส</p>
             </div>
         </header>
 
-        <div class="notification-box">
-            <h3 style="font-weight: 400; color: var(--bright-red);">💫 ใครกำลังหาฟอนต์ใช้งานอยู่ </h3>
-            <p>ทักแชทสอบถามหรือดูตัวอย่างก่อนได้เลย ยินดีให้บริการค่ะ ♥️</p>
+        <div class="announcement">
+            <h3>💫 ใครกำลังหาฟอนต์ใช้งานอยู่</h3>
+            <p>ทักแชทสอบถามได้ตลอดเลยนะคะ ยินดีให้บริการค่ะ ♥️</p>
         </div>
 
         <div class="card">
             <div class="card-title">📦 สินค้าทั้งหมด</div>
-            
             <div class="product-item">
-                <div class="product-info">
-                    <h4>🔤 ฟอนต์ลายมือหน้าบาง</h4>
+                <div>
+                    <h4>ฟอนต์ลายมือหน้าบาง</h4>
                     <p>หัวกลม มินิมอล อ่านง่ายสะอาดตา</p>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1roNYvhnwJf0nBWOjcoxJz4XpxJO_7SJ4" class="btn">ดูสินค้า</a>
+                <a href="https://drive.google.com/drive/folders/1roNYvhnwJf0nBWOjcoxJz4XpxJO_7SJ4" class="btn" target="_blank">ดูสินค้า</a>
             </div>
-
             <div class="product-item">
-                <div class="product-info">
-                    <h4>🍓 ปล่อยเอฟเครือต้าวแพรรี่</h4>
+                <div>
+                    <h4>ปล่อยเอฟเครือต้าวแพรรี่</h4>
                     <p>คอลเลคชั่นสุดน่ารัก สีสดใสแน่นๆ</p>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1BQKF_YTk8ffg4SEPXIEw0lztoNX4SXG5" class="btn">ดูสินค้า</a>
+                <a href="https://drive.google.com/drive/folders/1BQKF_YTk8ffg4SEPXIEw0lztoNX4SXG5" class="btn" target="_blank">ดูสินค้า</a>
             </div>
-
             <div class="product-item">
-                <div class="product-info">
-                    <h4>👥 กลุ่มตกแต่งต่างๆ</h4>
-                    <p>รวมแหล่งรวมของน่ารักสำหรับตกแต่ง</p>
+                <div>
+                    <h4>กลุ่มตกแต่งและสติกเกอร์</h4>
+                    <p>ของน่ารักสำหรับพ่อค้าแม่ค้าออนไลน์</p>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1C-DVUETEJn-kGH_x_364wJrvAZsoVFxy" class="btn">ดูสินค้า</a>
-            </div>
-
-            <div class="product-item">
-                <div class="product-info">
-                    <h4>🎨 สติ๊กเกอร์เฟส ไอจี</h4>
-                    <p>สติกเกอร์สวยๆ สำหรับแม่ค้าออนไลน์</p>
-                </div>
-                <a href="https://drive.google.com/drive/folders/1PUWkzXL4nS5Fn2LkJkbO211-1KKkeaim" class="btn">ดูสินค้า</a>
+                <a href="https://drive.google.com/drive/folders/1C-DVUETEJn-kGH_x_364wJrvAZsoVFxy" class="btn" target="_blank">ดูสินค้า</a>
             </div>
         </div>
 
         <div class="card">
             <div class="card-title">📋 ขั้นตอนการสั่งซื้อ</div>
-            <div class="step-item">
-                <div class="step-num">1</div>
-                <p style="font-size:14px;">ส่งชื่อหรือแคปรูปฟอนต์ที่ต้องการทางแชท</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">2</div>
-                <p style="font-size:14px;">ระบุประเภทการใช้งาน (ส่วนตัว / เชิงพาณิชย์)</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">3</div>
-                <p style="font-size:14px;">โอนเงินตามยอดที่แจ้ง พร้อมแนบสลิปและ Gmail</p>
-            </div>
-            <div class="step-item">
-                <div class="step-num">4</div>
-                <p style="font-size:14px;">รอรับสินค้าผ่าน Google Drive (3 นาที - 3 ชม.)</p>
-            </div>
+            <div class="step-item"><div class="num">1</div><p>แจ้งชื่อหรือแคปรูปฟอนต์ทางแชท</p></div>
+            <div class="step-item"><div class="num">2</div><p>ระบุการใช้งาน (ส่วนตัว / พาณิชย์)</p></div>
+            <div class="step-item"><div class="num">3</div><p>โอนเงิน แจ้งสลิป และ Gmail</p></div>
+            <div class="step-item"><div class="num">4</div><p>รอรับไฟล์ผ่าน Google Drive</p></div>
 
-            <div class="grid">
-                <div class="grid-item"><h4>🏦 กสิกรไทย</h4></div>
-                <div class="grid-item"><h4>📱 วอเลต</h4></div>
+            <div class="payment-info">
+                <div class="pay-box">🏦 ธนาคารกสิกร</div>
+                <div class="pay-box">📱 ทรูมันนี่วอเลต</div>
             </div>
         </div>
 
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="font-weight: 400; color: var(--bright-red); margin-bottom: 15px;">📱 ติดต่อเรา</h2>
-            <a href="https://www.facebook.com/share/1AxaVbuSnG/" class="contact-btn">Facebook</a>
-            <a href="https://lin.ee/sioKOSf" class="contact-btn">Line</a>
-            <a href="https://www.instagram.com/meowfont" class="contact-btn">Instagram</a>
+        <div class="contact-group">
+            <a href="https://www.facebook.com/share/1AxaVbuSnG/" class="contact-link">📸 Facebook</a>
+            <a href="https://lin.ee/sioKOSf" class="contact-link">💚 Line OA</a>
         </div>
-
     </div>
 
     <footer>
