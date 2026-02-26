@@ -1,116 +1,575 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meowfont 🐱</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --text:#b83280;        /* ชมพูเข้มแบบในภาพ */
-  --textl:#d946ef;       /* ชมพูม่วงอ่อน */
-  --pink:#f9a8d4;        /* เส้นขอบชมพู */
-  --pink2:#ec4899;       /* หัวข้อชมพู */
+  /* ฝัง font ตรงๆ ไม่พึ่ง Google Fonts เพื่อให้แสดงผลถูกต้องบน GitHub */
+  @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap');
+
+:root {
+–peach: #ffd6e0;
+–pink: #ffb3c6;
+–pink2: #e8608a;
+–lavender: #d8b8f0;
+–sky: #b8d8f8;
+–mint: #b8f0d8;
+–yellow: #fff0b8;
+–cream: #fffaf5;
+–brown: #7a4a3a;
+–text: #6a3a5a;
+–textl: #b888a8;
+–white: #ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Mitr',sans-serif;
-  background: linear-gradient(160deg,#ffe8f0 0%,#f5e8ff 40%,#e8f5ff 70%,#fffbe8 100%);
-  min-height:100vh;
-  color:var(--text);
-  overflow-x:hidden;
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-/* ================== HEADER ================== */
-
-.shop-name{
-  font-size:1.8rem;
-  font-weight:700;
-  letter-spacing:2px;
-  background:linear-gradient(90deg,#c084fc,#f472b6);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+html {
+font-size: 16px;
+-webkit-text-size-adjust: 100%;
 }
 
-.shop-sub{
-  font-size:.82rem;
-  color:var(--textl);
-  margin-top:6px;
-  line-height:1.6;
+body {
+font-family: ‘Mitr’, ‘Sarabun’, ‘Noto Sans Thai’, sans-serif;
+background-color: #ffe8f0;
+background-image:
+linear-gradient(160deg, #ffe8f0 0%, #f5e8ff 40%, #e8f0ff 70%, #fffbe8 100%);
+min-height: 100vh;
+color: var(–text);
+overflow-x: hidden;
 }
 
-/* ================== CARD TITLE ================== */
+/* floating sparkles */
+.sp {
+position: fixed;
+pointer-events: none;
+z-index: 0;
+opacity: 0.45;
+animation: fl 5s ease-in-out infinite;
+}
+.sp:nth-child(1) { top: 4%; left: 6%; font-size: 20px; animation-delay: 0s; }
+.sp:nth-child(2) { top: 10%; right: 8%; font-size: 13px; animation-delay: 1s; }
+.sp:nth-child(3) { top: 38%; left: 2%; font-size: 11px; animation-delay: 2s; }
+.sp:nth-child(4) { top: 60%; right: 3%; font-size: 18px; animation-delay: .5s; }
+.sp:nth-child(5) { bottom: 25%; left: 5%; font-size: 14px; animation-delay: 1.5s; }
+.sp:nth-child(6) { bottom: 8%; right: 6%; font-size: 10px; animation-delay: 2.5s; }
 
-.ct{
-  font-size:.98rem;
-  font-weight:600;
-  color:var(--pink2);
-  margin-bottom:13px;
-  display:flex;
-  align-items:center;
-  gap:8px;
+@keyframes fl {
+0%, 100% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-12px) rotate(8deg); }
 }
 
-/* ================== STATUS ================== */
-
-.s-open{
-  font-size:1.1rem;
-  font-weight:600;
-  color:var(--pink2);
+.wrap {
+max-width: 480px;
+margin: 0 auto;
+padding: 20px 16px 60px;
+position: relative;
+z-index: 1;
 }
 
-/* ================== TEXT ELEMENTS ================== */
-
-.st{ color:var(--text); }
-
-.lnk{
-  color:var(--text);
+/* ── HEADER ── */
+.header {
+text-align: center;
+padding: 28px 0 18px;
+animation: fadeUp .7s ease both;
 }
 
-.lnk-name{
-  font-weight:500;
-  font-size:.88rem;
-  color:var(--pink2);
+.shop-name {
+font-size: 2rem;
+font-weight: 700;
+letter-spacing: 2px;
+background: linear-gradient(135deg, #e06090, #9060d0, #5090e0);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+display: inline-block;
 }
 
-.lnk-url{
-  font-size:.72rem;
-  color:var(--textl);
+.shop-sub {
+font-size: .84rem;
+color: var(–textl);
+margin-top: 8px;
+line-height: 1.8;
 }
 
-.tag{
-  color:var(--text);
+.badges {
+display: flex;
+justify-content: center;
+gap: 7px;
+flex-wrap: wrap;
+margin-top: 12px;
 }
 
-.pay-pill{
-  color:var(--text);
+.badge {
+background: rgba(255,255,255,.85);
+border: 1.5px solid rgba(255,150,185,.5);
+border-radius: 20px;
+padding: 4px 14px;
+font-size: .72rem;
+color: var(–pink2);
+font-weight: 500;
 }
 
-.note{
-  color:var(--text);
+/* divider */
+.divider {
+text-align: center;
+color: #ffaac0;
+font-size: .85rem;
+letter-spacing: 7px;
+margin: 6px 0 16px;
 }
 
-.footer{
-  color:var(--textl);
+/* status */
+.status-box {
+background: linear-gradient(135deg, #fff0f5, #f5eaff);
+border: 1.5px dashed #ffb3c6;
+border-radius: 16px;
+padding: 15px;
+text-align: center;
+margin-bottom: 14px;
+animation: fadeUp .5s .1s ease both;
 }
 
-.soc{
-  color:var(--text);
+.s-dot {
+display: inline-block;
+width: 9px; height: 9px;
+background: #6fcf97;
+border-radius: 50%;
+margin-right: 6px;
+box-shadow: 0 0 0 3px rgba(111,207,151,.3);
+animation: blink 2s ease-in-out infinite;
 }
 
-.cta-btn{
-  font-family:'Mitr',sans-serif;
+@keyframes blink {
+0%, 100% { opacity: 1; }
+50% { opacity: .3; }
 }
 
+.s-open {
+font-size: 1.05rem;
+font-weight: 600;
+color: #e8608a;
+}
+
+/* cards */
+.card {
+background: rgba(255,255,255,.78);
+border: 1.5px solid rgba(255,170,200,.4);
+border-radius: 22px;
+padding: 20px 18px;
+margin-bottom: 14px;
+box-shadow: 0 4px 16px rgba(255,120,160,.1);
+animation: fadeUp .6s ease both;
+}
+
+.card:nth-child(1) { animation-delay: .1s; }
+.card:nth-child(2) { animation-delay: .2s; }
+.card:nth-child(3) { animation-delay: .3s; }
+.card:nth-child(4) { animation-delay: .4s; }
+.card:nth-child(5) { animation-delay: .5s; }
+.card:nth-child(6) { animation-delay: .55s; }
+.card:nth-child(7) { animation-delay: .6s; }
+.card:nth-child(8) { animation-delay: .65s; }
+
+.ct {
+font-size: .98rem;
+font-weight: 600;
+color: #e8608a;
+margin-bottom: 13px;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+/* highlight box */
+.hi-box {
+background: linear-gradient(135deg, #ffb3c6, #c8a0f0);
+border-radius: 14px;
+padding: 13px 16px;
+color: #ffffff;
+text-align: center;
+margin-bottom: 12px;
+font-size: .85rem;
+line-height: 1.7;
+box-shadow: 0 5px 16px rgba(255,100,150,.25);
+}
+
+/* steps */
+.steps {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.step {
+display: flex;
+gap: 11px;
+align-items: flex-start;
+}
+
+.sn {
+width: 28px; height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, #ffb3c6, #c8a0f0);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: .78rem;
+font-weight: 600;
+color: #ffffff;
+flex-shrink: 0;
+box-shadow: 0 3px 8px rgba(255,100,150,.3);
+}
+
+.st {
+font-size: .84rem;
+color: var(–text);
+padding-top: 4px;
+line-height: 1.7;
+}
+
+/* tags inside steps */
+.tag-row {
+display: flex;
+flex-wrap: wrap;
+gap: 5px;
+margin-top: 6px;
+}
+
+.tag {
+background: linear-gradient(135deg, #ffe8f0, #f0e8ff);
+border: 1px solid rgba(255,150,190,.35);
+border-radius: 12px;
+padding: 3px 11px;
+font-size: .72rem;
+color: var(–text);
+}
+
+/* payment pills */
+.pay-row {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.pay-pill {
+background: linear-gradient(135deg, #fff0f5, #f0eaff);
+border: 1.5px solid rgba(255,160,195,.4);
+border-radius: 12px;
+padding: 8px 14px;
+font-size: .82rem;
+color: var(–text);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+/* links */
+.lnk {
+display: flex;
+align-items: center;
+gap: 11px;
+background: linear-gradient(135deg, #fff5f8, #f5f0ff);
+border: 1.5px solid rgba(255,155,190,.3);
+border-radius: 14px;
+padding: 11px 14px;
+text-decoration: none;
+color: var(–text);
+font-size: .84rem;
+margin-bottom: 9px;
+transition: transform .2s, background .2s;
+}
+
+.lnk:hover {
+transform: translateX(4px);
+background: linear-gradient(135deg, #ffe8f0, #ece8ff);
+}
+
+.lnk:last-child { margin-bottom: 0; }
+
+.lnk-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.lnk-name {
+font-weight: 600;
+font-size: .88rem;
+color: #e8608a;
+margin-bottom: 2px;
+}
+
+.lnk-desc {
+font-size: .73rem;
+color: var(–textl);
+}
+
+/* note box */
+.note {
+background: linear-gradient(135deg, #fffbe8, #fff0f5);
+border: 1.5px solid rgba(255,200,100,.4);
+border-radius: 14px;
+padding: 13px 15px;
+font-size: .83rem;
+color: var(–text);
+line-height: 1.8;
+}
+
+/* CTA */
+.cta-wrap {
+text-align: center;
+padding: 10px 0;
+animation: fadeUp .6s .7s ease both;
+opacity: 0;
+}
+
+.cta-btn {
+display: inline-block;
+width: 100%;
+max-width: 300px;
+background: linear-gradient(135deg, #ff85a1, #b07ae8);
+color: #ffffff;
+font-family: ‘Mitr’, ‘Sarabun’, sans-serif;
+font-size: 1rem;
+font-weight: 500;
+padding: 14px 36px;
+border-radius: 50px;
+text-decoration: none;
+border: none;
+cursor: pointer;
+box-shadow: 0 8px 22px rgba(255,100,150,.38);
+transition: transform .3s, box-shadow .3s;
+animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+0%, 100% { box-shadow: 0 8px 22px rgba(255,100,150,.38); }
+50% { box-shadow: 0 10px 32px rgba(255,100,150,.6); }
+}
+
+.cta-btn:hover {
+transform: translateY(-3px) scale(1.03);
+}
+
+/* footer */
+.footer {
+text-align: center;
+padding: 18px 0 8px;
+font-size: .73rem;
+color: var(–textl);
+}
+
+.socs {
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
+margin-bottom: 10px;
+}
+
+.soc {
+background: #ffffff;
+border: 1.5px solid #ffb3c6;
+border-radius: 20px;
+padding: 6px 15px;
+font-size: .78rem;
+color: var(–text);
+text-decoration: none;
+transition: background .2s, transform .2s;
+}
+
+.soc:hover {
+background: #ffe8f0;
+transform: translateY(-2px);
+}
+
+/* animations */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(18px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.header { animation: fadeUp .7s ease both; }
 </style>
+
 </head>
 <body>
 
-<!-- เนื้อหาของมึงทั้งหมดใช้ของเดิมได้เลย ไม่ต้องแก้อะไร -->
+<!-- sparkles -->
 
+<div class="sp">✦</div>
+<div class="sp">🌸</div>
+<div class="sp">🐱</div>
+<div class="sp">✿</div>
+<div class="sp">⋆</div>
+<div class="sp">🌷</div>
+
+<div class="wrap">
+
+  <!-- Header -->
+
+  <div class="header">
+    <div class="shop-name">Meowfont</div>
+    <div class="shop-sub">
+      🐱 จำหน่ายฟอนต์ลายมือ · ของตกแต่ง · สติ๊กเกอร์<br>
+      ✨ ปล่อยเอฟตูน · กลุ่มของตกแต่ง · สติ๊กเกอร์เฟส · ไอจี
+    </div>
+    <div class="badges">
+      <span class="badge">🖊️ ฟอนต์ลายมือ</span>
+      <span class="badge">🎀 ของตกแต่ง</span>
+      <span class="badge">😸 สติ๊กเกอร์</span>
+    </div>
+  </div>
+
+  <div class="divider">✦ · · ✦ · · ✦</div>
+
+  <!-- Status -->
+
+  <div class="status-box">
+    <div class="s-open"><span class="s-dot"></span>เปิดร้านค้าสามารถทักเข้ามาได้เลยนะคะ 🎀</div>
+  </div>
+
+  <!-- เกี่ยวกับร้าน -->
+
+  <div class="card">
+    <div class="ct">🐱 ยินดีต้อนรับสู่ Meowfont</div>
+    <div style="font-size:.85rem; line-height:1.8; color:#6a3a5a;">
+      ร้านจำหน่าย <strong>ฟอนต์ลายมือ</strong> หลากหลายสไตล์ 🖊️<br>
+      พร้อมด้วย <strong>ของตกแต่ง</strong> · ปล่อยเอฟตูน<br>
+      กลุ่มของตกแต่ง · ปล่อยเอฟสติ๊กเกอร์เฟส · IG 🌸
+    </div>
+  </div>
+
+  <!-- ดูสินค้า -->
+
+  <div class="card">
+    <div class="ct">🔗 ดูสินค้าทั้งหมดได้ที่นี่เลยค่า</div>
+    <a href="https://drive.google.com/drive/folders/1roNYvhnwJf0nBWOjcoxJz4XpxJO_7SJ4" class="lnk" target="_blank">
+      <span class="lnk-icon">🖊️</span>
+      <div><div class="lnk-name">รวมฟอนต์ทั้งหมด</div><div class="lnk-desc">กดเพื่อดูฟอนต์ทุกตัวค่ะ →</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1BQKF_YTk8ffg4SEPXIEw0lztoNX4SXG5" class="lnk" target="_blank">
+      <span class="lnk-icon">🌸</span>
+      <div><div class="lnk-name">ปล่อยเอฟ เครือต้าวแพร์รี่</div><div class="lnk-desc">กดเพื่อดูของตกแต่งค่ะ →</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1C-DVUETEJn-kGH_x_364wJrvAZsoVFxy" class="lnk" target="_blank">
+      <span class="lnk-icon">💕</span>
+      <div><div class="lnk-name">รวมกลุ่มต่างๆ ที่มี</div><div class="lnk-desc">กดเพื่อดูกลุ่มทั้งหมดค่ะ →</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1PUWkzXL4nS5Fn2LkJkbO211-1KKkeaim" class="lnk" target="_blank">
+      <span class="lnk-icon">😸</span>
+      <div><div class="lnk-name">ปล่อยเอฟสติ๊กเกอร์เฟส & IG</div><div class="lnk-desc">กดเพื่อดูสติ๊กเกอร์ค่ะ →</div></div>
+    </a>
+  </div>
+
+  <!-- ระยะเวลา -->
+
+  <div class="card">
+    <div class="ct">⏰ ระยะเวลาดำเนินการ</div>
+    <div class="hi-box">
+      🕐 ดึงเมลฟอนต์ใช้เวลา <strong>3 นาที – 3 ชั่วโมง</strong><br>
+      <small>ขึ้นอยู่กับจำนวนคิวและปริมาณงานค่ะ</small>
+    </div>
+    <div style="font-size:.82rem; color:#b888a8; text-align:center;">
+      📧 รับฟอนต์ทางอีเมล Gmail เท่านั้นนะคะ
+    </div>
+  </div>
+
+  <!-- ขั้นตอน -->
+
+  <div class="card">
+    <div class="ct">📋 ขั้นตอนการสั่งซื้อ</div>
+    <div class="steps">
+      <div class="step">
+        <div class="sn">1</div>
+        <div class="st">แจ้งชื่อฟอนต์ หรือ แคปรูปฟอนต์ส่งทางแชทค่ะ 🖊️</div>
+      </div>
+      <div class="step">
+        <div class="sn">2</div>
+        <div class="st">
+          แจ้งวัตถุประสงค์การใช้งาน
+          <div class="tag-row">
+            <span class="tag">👤 ส่วนตัว</span>
+            <span class="tag">💼 เชิงพาณิชย์</span>
+            <span class="tag">🏢 นามบริษัท</span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn">3</div>
+        <div class="st">รอแม่ค้าสรุปยอด → รับเลขบัญชีเพื่อชำระเงินค่ะ 💳</div>
+      </div>
+      <div class="step">
+        <div class="sn">4</div>
+        <div class="st">โอนเงินแล้ว แจ้งสลิป + อีเมล <strong>Gmail</strong> ที่เชื่อมกับ Drive ค่ะ 📧</div>
+      </div>
+      <div class="step">
+        <div class="sn">5</div>
+        <div class="st">รอรับฟอนต์ผ่าน Google Drive ได้เลยค่า 🎉</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ชำระเงิน -->
+
+  <div class="card">
+    <div class="ct">💳 ช่องทางชำระเงิน</div>
+    <div class="pay-row">
+      <div class="pay-pill">🏦 ธนาคารกสิกร (KBANK)</div>
+      <div class="pay-pill">💚 TrueMoney Wallet</div>
+    </div>
+  </div>
+
+  <!-- หมายเหตุ -->
+
+  <div class="card">
+    <div class="ct">📌 หมายเหตุสำคัญ</div>
+    <div class="note">
+      📧 ต้องแจ้งอีเมล <strong>Gmail เท่านั้น</strong> และต้องเป็นอีเมลที่เชื่อมกับ Google Drive นะคะ<br><br>
+      📦 รับฟอนต์ผ่าน Google Drive ส่งตรงทางอีเมลที่แจ้งไว้ค่ะ
+    </div>
+  </div>
+
+  <!-- ติดต่อ -->
+
+  <div class="card">
+    <div class="ct">📱 ช่องทางติดต่อ & สั่งซื้อ</div>
+    <a href="https://www.facebook.com/share/1AxaVbuSnG/" class="lnk" target="_blank">
+      <span class="lnk-icon">📘</span>
+      <div><div class="lnk-name">Facebook</div><div class="lnk-desc">สั่งซื้อ & ติดตามร้านได้เลยค่ะ</div></div>
+    </a>
+    <a href="https://lin.ee/sioKOSf" class="lnk" target="_blank">
+      <span class="lnk-icon">💚</span>
+      <div><div class="lnk-name">LINE</div><div class="lnk-desc">ทักแชทสั่งซื้อได้เลยค่ะ</div></div>
+    </a>
+    <a href="https://www.instagram.com/meowfont?igsh=MWFkczdndnM3ejlzeg==" class="lnk" target="_blank">
+      <span class="lnk-icon">📸</span>
+      <div><div class="lnk-name">Instagram</div><div class="lnk-desc">@meowfont · ดูผลงานได้ที่นี่ค่ะ</div></div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+
+  <div class="cta-wrap">
+    <a href="https://lin.ee/sioKOSf" class="cta-btn" target="_blank">
+      💚 ทักมาสั่งซื้อได้เลยค่า!
+    </a>
+  </div>
+
+  <!-- Footer -->
+
+  <div class="footer">
+    <div class="socs">
+      <a href="https://www.facebook.com/share/1AxaVbuSnG/" class="soc" target="_blank">📘 Facebook</a>
+      <a href="https://www.instagram.com/meowfont?igsh=MWFkczdndnM3ejlzeg==" class="soc" target="_blank">📸 Instagram</a>
+      <a href="https://lin.ee/sioKOSf" class="soc" target="_blank">💚 LINE</a>
+    </div>
+    <div>made with 🩷 · Meowfont · ฟอนต์ลายมือ & ของตกแต่ง</div>
+  </div>
+
+</div>
 </body>
 </html>
